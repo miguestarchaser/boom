@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1757898914
+icon.svg::CompressedTexture2D::1359866195120457735::1757870055::1757898914::1::::<><><>0<>0<>709d037950c50833f9ac2629db242da3<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1757900087
+::res://assets/fonts/::1757898914
+CursedTimerUlil-Aznm.ttf::FontFile::2105207973891688997::1754706448::1757898914::1::::<><><>0<>0<>3e488a6daba2013088f8e70758b4716c<>res://.godot/imported/CursedTimerUlil-Aznm.ttf-92e8b632cdb830474d4c1dd33e9ae25e.fontdata::
+::res://assets/sounds/::1757901450
+action.wav::AudioStreamWAV::5970262053509064199::1472660100::1757900781::1::::<><><>0<>0<>cd723df68b59a635c4655d375ac7ea0f<>res://.godot/imported/action.wav-5b659778de59275cff2f935e0915e72d.sample::
+fondo.wav::AudioStreamWAV::8294670590171504778::1757900044::1757900837::1::::<><><>0<>0<>5807196c8745ab7163c26559cd150a22<>res://.godot/imported/fondo.wav-c0a6e102e9ae87de477d1b35a0fc2e95.sample::
+pausa.wav::AudioStreamWAV::115847657799753549::1472659720::1757900825::1::::<><><>0<>0<>54576f04c3fd526ce3b03ac83dc98035<>res://.godot/imported/pausa.wav-18a03916c5537b2da5a3497122c3db97.sample::
+timer_large.wav::AudioStreamWAV::567852482785251695::1757901285::1757901463::1::::<><><>0<>0<>7eaa679cfa435e88f7b7337acd5eb60c<>res://.godot/imported/timer_large.wav-0ac281be45fb1ed1d4534df31b61097b.sample::
+::res://escenas/::1757874538
+::res://escenas/main/::1757900918
+main.gd::GDScript::6786302744558331450::1757900744::0::1::::<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::1794040791430289546::1757900918::0::1::::<><><>0<>0<><>::uid://c3xlodn3dbab7::::res://escenas/main/main.gd<>uid://481p5ywgwc7n::::res://assets/fonts/CursedTimerUlil-Aznm.ttf<>uid://dqgaao0jcslve::::res://assets/sounds/fondo.wav

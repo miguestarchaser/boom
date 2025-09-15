@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0tbubypa746y"]
+[gd_scene load_steps=5 format=3 uid="uid://0tbubypa746y"]
 
 [ext_resource type="Script" uid="uid://c3xlodn3dbab7" path="res://escenas/main/main.gd" id="1_e0ogj"]
 [ext_resource type="FontFile" uid="uid://481p5ywgwc7n" path="res://assets/fonts/CursedTimerUlil-Aznm.ttf" id="1_paxdn"]
+[ext_resource type="AudioStream" uid="uid://dqgaao0jcslve" path="res://assets/sounds/fondo.wav" id="3_g6o4e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_paxdn"]
 font = ExtResource("1_paxdn")
@@ -58,7 +59,23 @@ offset_left = 1.0
 offset_right = 1155.0
 offset_bottom = 532.0
 
+[node name="audio" type="Button" parent="."]
+offset_left = 1050.0
+offset_top = 562.0
+offset_right = 1146.0
+offset_bottom = 644.0
+
+[node name="back" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g6o4e")
+volume_db = -9.0
+autoplay = true
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+
+[node name="actions" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="countdown" to="." method="_on_countdown_pressed"]
 [connection signal="pressed" from="random" to="." method="_on_random_pressed"]
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="audio" to="." method="_on_audio_pressed"]

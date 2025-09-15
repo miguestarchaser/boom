@@ -7,6 +7,11 @@ var rng 			= RandomNumberGenerator.new()
 var flag 			= 0;
 var running			= false; 
 var paused			= false; 
+var backsnd 		= true;
+
+var pause_sfx 		= preload("res://assets/sounds/pausa.wav");
+var action_sfx 		= preload("res://assets/sounds/action.wav");
+var tic_sfx 		= preload("res://assets/sounds/timer_large.wav");
 
 
 func _ready() -> void:
@@ -35,6 +40,9 @@ func _select_mode() -> void:
 	pass
 	
 func _count() -> void:
+	if !$sfx.is_playing():
+		$sfx.stream = tic_sfx;
+		$sfx.play()
 	seconds -= 1;
 	var lbl:String = str(seconds);
 	if(seconds<10):
@@ -46,6 +54,10 @@ func _count() -> void:
 	else:
 		flag = 0;
 		$flag.color =  Color(1, 1, 1);
+	if(game_type==0):
+		var tween = create_tween();
+		tween.tween_property($minutos,"scale",Vector2(1.0,1.0),0.2).from(Vector2(1.2,1.2))
+		pass	
 	if(seconds==0):
 		$Timer.paused 	= true;
 		pass
@@ -83,6 +95,9 @@ func _timeup() -> void:
 
 #modos
 func _on_countdown_pressed() -> void:
+	if !$actions.is_playing():
+		$actions.stream = action_sfx;
+		$actions.play()
 	seconds = 60;
 	game_type = 0;
 	_start();
@@ -90,6 +105,9 @@ func _on_countdown_pressed() -> void:
 
 
 func _on_random_pressed() -> void:
+	if !$actions.is_playing():
+		$actions.stream = action_sfx;
+		$actions.play()
 	var nbr = rng.randi_range(0,(times.size()-1));
 	seconds = times[nbr];
 	game_type = 1;
@@ -112,6 +130,9 @@ func _on_restart_pressed() -> void:
 
 
 func _on_pause_pressed() -> void:
+	if !$actions.is_playing():
+		$actions.stream = pause_sfx;
+		$actions.play()
 	if(paused):
 		paused = false;
 		_resume();
@@ -120,4 +141,17 @@ func _on_pause_pressed() -> void:
 		paused = true;
 		_pause();
 		
+	pass # Replace with function body.
+
+
+func _on_audio_pressed() -> void:
+	if !$actions.is_playing():
+		$actions.stream = action_sfx;
+		$actions.play()
+	if(backsnd):
+		backsnd = false;
+		$back.stop()
+	else:
+		backsnd = true;
+		$back.play()
 	pass # Replace with function body.
